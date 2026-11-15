@@ -107,21 +107,33 @@ online-voting-platform
 
 ---
 
+# 🚀 Getting Started
 
-🚀 Getting Started
-1. Clone the Repository
-Bash
-git clone [https://github.com/Mahij740/online-voting-platform.git](https://github.com/Mahij740/online-voting-platform.git)
-2. Open the Project
-Import the project into Eclipse IDE as a Maven project.
+## 1. Clone the Repository
 
-3. Create PostgreSQL Database
-SQL
+```bash
+git clone https://github.com/Mahij740/online-voting-platform.git
+```
+
+## 2. Open the Project
+
+Import the project into **Eclipse IDE** as a Maven project.
+
+---
+
+## 3. Create PostgreSQL Database
+
+```sql
 CREATE DATABASE online_voting;
-4. Configure Database
-Update your application.properties.
+```
 
-Properties
+---
+
+## 4. Configure Database
+
+Update your `application.properties`.
+
+```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/online_voting
 spring.datasource.username=YOUR_USERNAME
 spring.datasource.password=YOUR_PASSWORD
@@ -130,125 +142,189 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 
 server.port=9999
-5. Run the Application
+```
+
+---
+
+## 5. Run the Application
+
 Run:
 
-Plaintext
+```
 OnlineVotingPlatformApplication.java
+```
+
 Open:
 
-Plaintext
+```
 http://localhost:9999
-📋 Modules
-🏠 Home Page
+```
 
-📊 Dashboard
+---
 
-👤 Voter Management
+# 📋 Modules
 
-🏛 Candidate Management
+* 🏠 Home Page
+* 📊 Dashboard
+* 👤 Voter Management
+* 🏛 Candidate Management
+* 🗳 Cast Vote
+* 📜 Vote History
+* 🏆 Winner Page
 
-🗳 Cast Vote
+---
 
-📜 Vote History
+# 🌐 REST API Endpoints
 
-🏆 Winner Page
+## Voter
 
-🌐 REST API Endpoints
-Voter
-Method	Endpoint
-POST	/voter/register
-GET	/voter
-GET	/voter/{id}
-DELETE	/voter/{id}
-Candidate
-Method	Endpoint
-POST	/candidate
-GET	/candidate
-GET	/candidate/{id}
-PUT	/candidate/{id}
-DELETE	/candidate/{id}
-Vote
-Method	Endpoint
-POST	/vote/{voterId}/{candidateId}
-GET	/vote
-GET	/vote/{id}
-GET	/vote/voter/{voterId}
-GET	/vote/candidate/{candidateId}
-Winner
-Method	Endpoint
-GET	/winner
-✔ CRUD Operations
-Module	Create	Read	Update	Delete
-Candidate	✅	✅	✅	✅
-Voter	✅	✅	❌	✅
-Vote	✅	✅	❌	❌
-✔ Validation
+| Method | Endpoint          |
+| ------ | ----------------- |
+| POST   | `/voter/register` |
+| GET    | `/voter`          |
+| GET    | `/voter/{id}`     |
+| DELETE | `/voter/{id}`     |
+
+---
+
+## Candidate
+
+| Method | Endpoint          |
+| ------ | ----------------- |
+| POST   | `/candidate`      |
+| GET    | `/candidate`      |
+| GET    | `/candidate/{id}` |
+| PUT    | `/candidate/{id}` |
+| DELETE | `/candidate/{id}` |
+
+---
+
+## Vote
+
+| Method | Endpoint                        |
+| ------ | ------------------------------- |
+| POST   | `/vote/{voterId}/{candidateId}` |
+| GET    | `/vote`                         |
+| GET    | `/vote/{id}`                    |
+| GET    | `/vote/voter/{voterId}`         |
+| GET    | `/vote/candidate/{candidateId}` |
+
+---
+
+## Winner
+
+| Method | Endpoint  |
+| ------ | --------- |
+| GET    | `/winner` |
+
+---
+
+# ✔ CRUD Operations
+
+| Module    | Create | Read | Update | Delete |
+| --------- | :----: | :--: | :----: | :----: |
+| Candidate |    ✅   |   ✅  |    ✅   |    ✅   |
+| Voter     |    ✅   |   ✅  |    ❌   |    ✅   |
+| Vote      |    ✅   |   ✅  |    ❌   |    ❌   |
+
+---
+
+# ✔ Validation
+
 The application validates:
 
-Required fields
+* Required fields
+* Email format
+* Password presence
+* Duplicate voter registration
+* One vote per voter
+* Resource existence
 
-Email format
+---
 
-Password presence
+# 🔒 Security
 
-Duplicate voter registration
+The application uses **Spring Security** with:
 
-One vote per voter
+* HTTP Basic Authentication
+* BCrypt Password Encryption
+* Protected REST APIs
+* Public access to frontend pages
 
-Resource existence
+---
 
-🔒 Security
-The application uses Spring Security with:
+# 🖼 Screenshots
 
-HTTP Basic Authentication
+## 🏠 Home Page
 
-BCrypt Password Encryption
+![Home](screenshots/home.png)
 
-Protected REST APIs
+---
 
-Public access to frontend pages
+## 📊 Dashboard
 
-🖼 Screenshots
-🏠 Home Page
-📊 Dashboard
-👤 Voter Management
-🏛 Candidate Management
-🗳 Cast Vote
-📜 Vote History
-🏆 Election Winner
-🚀 Future Enhancements
-JWT Authentication
+![Dashboard](screenshots/dashboard.png)
 
-Admin Login
+---
 
-Voter Login
+## 👤 Voter Management
 
-Election Scheduling
+![Voter](screenshots/voter.png)
 
-Candidate Photos
+---
 
-Live Result Dashboard
+## 🏛 Candidate Management
 
-Charts & Analytics
+![Candidate](screenshots/candidate.png)
 
-Email Notifications
+---
 
-Result Export (PDF/Excel)
+## 🗳 Cast Vote
 
-👨‍💻 Author
-Mahij740
+![Vote](screenshots/vote.png)
+
+---
+
+## 📜 Vote History
+
+![History](screenshots/history.png)
+
+---
+
+## 🏆 Election Winner
+
+![Winner](screenshots/winner.png)
+
+---
+
+# 🚀 Future Enhancements
+
+* JWT Authentication
+* Admin Login
+* Voter Login
+* Election Scheduling
+* Candidate Photos
+* Live Result Dashboard
+* Charts & Analytics
+* Email Notifications
+* Result Export (PDF/Excel)
+
+---
+
+# 👨‍💻 Author
+
+**Mahij740**
 
 GitHub: https://github.com/Mahij740
 
-⭐ Support
+---
+
+# ⭐ Support
+
 If you found this project useful, consider giving it a ⭐ on GitHub.
 
-📄 License
+---
+
+# 📄 License
+
 This project is developed for educational and academic purposes.
-
-
-### Quick Checklist Before You Push:
-1. **Screenshot filenames:** Make sure your 7 new images inside `screenshots/` are named exactly `home.png`, `dashboard.png`, `voter.png`, `candidate.png`, `vote.png`, `history.png`, and `winner.png` (all lowercase `.png`), otherwise GitHub won't render them.
-2. **Sanitize `application.properties`:** Change `spring.datasource.password=...` back to `YOUR_PASSWORD` before running `git add .`.
-3. **Check `pom.xml`:** Open `pom.xml` briefly to make sure `<groupId>` or `<description>` doesn't still contain `Devaanshhh` (if it's `com.voting`, you're completely good to go).
